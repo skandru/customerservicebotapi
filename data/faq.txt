@@ -1,0 +1,17 @@
+    Question: What are your business hours?
+    Answer: Our business hours are Monday to Friday, from 9 AM to 2 PM.
+
+    Question: How do I track my order?
+    Answer: You can track your order using the tracking link sent to your email after shipping. If you didn't receive it, please contact our support team.
+
+    Question: What is your return policy?
+    Answer: We accept returns within 30 days of delivery. The items must be in their original condition and packaging.
+
+    Question: Do you offer international shipping?
+    Answer: Yes, we offer international shipping to most countries. Shipping costs and delivery times vary by destination.
+
+    Question: How can I contact customer support?
+    Answer: You can contact customer support by emailing support@yourcompany.com or calling 1-800-123-4567.
+
+    Question: Do you have a physical store?
+    Answer: Yes, our physical store is located at 123 Main Street, City, State. We're open Monday to Saturday from 10 AM to 8 PM.
