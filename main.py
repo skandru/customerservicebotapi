@@ -1,6 +1,10 @@
+from llama_index.embeddings.ollama import OllamaEmbedding
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.llms.ollama import Ollama
+from llama_index.core.settings import Settings
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from dotenv import load_dotenv
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import logging
 import openai
@@ -11,8 +15,12 @@ import os
 logging.basicConfig(level=logging.INFO)
 
 # Load environment variables
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# load_dotenv()
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+Settings.llm = Ollama(model="llama3")
+Settings.embed_model = HuggingFaceEmbedding(
+    model_name="BAAI/bge-small-en-v1.5"
+)
 
 # Initialize the index and app
 documents = SimpleDirectoryReader("data").load_data()
@@ -21,6 +29,7 @@ query_engine = index.as_query_engine(similarity_top_k=1)
 
 app = Flask(__name__)
 CORS(app)
+
 
 @app.route('/ask', methods=['POST'])
 def ask_question():
