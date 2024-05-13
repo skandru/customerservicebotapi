@@ -1,1 +1,1 @@
-web: gunicorn main:app --bind 0.0.0.0:5000 --workers 3
+web: gunicorn app:app --bind 0.0.0.0:5000 --workers 3
